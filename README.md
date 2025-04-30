@@ -31,16 +31,16 @@ python app.py
 Появятся метрики классификации в виде таблицы и матрица ошибок в виде графика.
 
 Структура проекта
-laba3/
-├── app.py
-├── requirements.txt
-├── README.md
-├── data/
-├── static/
-│   └── plot.png
-│   └── conf_matrix.png
-├── templates/
-│   ├── index.html
-│   ├── visualize.html
-│   └── results.html
-└── models/
+laba3/  
+├── app.py  
+├── requirements.txt  
+├── README.md  
+├── data/  
+├── static/  
+│   └── plot.png  
+│   └── conf_matrix.png  
+├── templates/  
+│   ├── index.html  
+│   ├── visualize.html  
+│   └── results.html  
+└── models/  
