@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+    <title>Результаты</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 60%;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Отчет модели</h1>
+    {% if report %}
+        <h2>Метрики:</h2>
+        <table>
+            <tr>
+                <th>Класс</th>
+                <th>Precision</th>
+                <th>Recall</th>
+                <th>F1-score</th>
+                <th>Support</th>
+            </tr>
+            {% for label, metrics in report.items() %}
+                {% if 'precision' in metrics %}
+                <tr>
+                    <td>{{ label }}</td>
+                    <td>{{ "%.2f"|format(metrics['precision']) }}</td>
+                    <td>{{ "%.2f"|format(metrics['recall']) }}</td>
+                    <td>{{ "%.2f"|format(metrics['f1-score']) }}</td>
+                    <td>{{ metrics['support'] }}</td>
+                </tr>
+                {% endif %}
+            {% endfor %}
+
+        </table>
+        <h2>Матрица ошибок:</h2>
+        <img src="{{ image_path }}" alt="Confusion Matrix" width="500">
+    {% else %}
+        <p>Нет результатов.</p>
+    {% endif %}
+</body>
+</html>

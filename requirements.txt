@@ -1,0 +1,7 @@
+flask
+dask[dataframe]
+pandas
+matplotlib
+seaborn
+scikit-learn
+joblib

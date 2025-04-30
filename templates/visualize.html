@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+<head>
+    <title>Визуализация</title>
+</head>
+<body>
+    <h1>График данных</h1>
+    <img src="{{ image_path }}" alt="Data visualization" width="800">
+    <form action="/train" method="post">
+        <label>Целевая переменная (target):</label>
+        <input type="text" name="target" required>
+        <input type="submit" value="Обучить модель">
+    </form>
+</body>
+</html>
